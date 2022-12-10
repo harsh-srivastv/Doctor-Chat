@@ -1,12 +1,12 @@
 import React from 'react';
 
-const StepAvatar = ({ OnNext }) => {
-  return (
-    <>
-        <div>Avatar Component</div>
-        <button onClick={OnNext}>Next</button>
-    </>
-  );
+const StepAvatar = ({ onNext }) => {
+    return (
+        <>
+            <div>Avatar component</div>
+            <button onClick={onNext}>Next</button>
+        </>
+    );
 };
 
 export default StepAvatar;
