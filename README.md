@@ -62,3 +62,12 @@
 
 
 ## DFD for User Registration:
+
+<p align="center">
+![Login DFD](https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Login%20DFD.png) 
+</p>
+ 
+
+## DFD for Doctor Chat:
+
+![Doctor Chat DFD](https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Doctor%20Chat%20DFD.PNG)
