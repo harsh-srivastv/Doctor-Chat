@@ -14,11 +14,11 @@
 
 ## Tools & Technologies Used:
 
-**Frontend**: ReactJS, HTML5, CSS 3
+- **Frontend**: ReactJS, HTML5, CSS 3
 
-**Backend**: ExpressJS, NodeJS
+- **Backend**: ExpressJS, NodeJS
 
-**Database**: MongoDB
+- **Database**: MongoDB
 
 ## Methodology/ Planning of work:
 
@@ -64,10 +64,12 @@
 ## DFD for User Registration:
 
 <p align="center">
-![Login DFD](https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Login%20DFD.png) 
+    <img height="400" width="600" src="https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Login%20DFD.png" alt="Login DFD">
 </p>
  
 
 ## DFD for Doctor Chat:
 
-![Doctor Chat DFD](https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Doctor%20Chat%20DFD.PNG)
+<p align="center">
+    <img height="500" width="500" src="https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Doctor%20Chat%20DFD.PNG" alt="Doctor Chat DFD">
+</p>
