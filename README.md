@@ -60,12 +60,5 @@
 ### Logout:
 - User can logout using the logout button.
 
+
 ## DFD for User Registration:
-
-
-  
-
-
-
-
-
