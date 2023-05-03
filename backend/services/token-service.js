@@ -52,3 +52,11 @@
 // }
 
 // module.exports = new TokenService();
+
+class TokenService {
+    generateTokens() {
+
+    }
+}
+
+module.exports = new TokenService();
