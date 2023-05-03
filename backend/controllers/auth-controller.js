@@ -153,6 +153,7 @@ const otpService = require('../services/otp-service');
 const hashService = require('../services/hash-service');
 const userService = require('../services/user-service');
 const tokenService = require('../services/token-service');
+const UserDto = require('../dtos/user-dto');
 
 class AuthController {
     async sendOtp(req, res) {
@@ -173,10 +174,11 @@ class AuthController {
 
         // send otp
         try {
-            await otpService.sendBySms(phone, otp);
+            // await otpService.sendBySms(phone, otp);
             res.json({
                 hash: `${hash}.${expires}`,
                 phone,
+                otp
             });
         } catch (err) {
             console.log(err);
@@ -208,8 +210,21 @@ class AuthController {
             console.log(err);
             res.status(500).json({ message: 'Db error' });
         }
-        let accessToken;
-        let refreshToken;
+
+        // let accessToken;
+        const { accessToken, refreshToken } = tokenService.generateTokens({
+            _id: user._id,
+            activated: false,
+        });
+
+        // let refreshToken;
+
+        res.cookie('refreshToken', refreshToken, {
+            maxAge: 1000 * 60 * 60 * 24 * 30,
+            httpOnly: true,
+        });
+        const userDto = new UserDto(user);
+        res.json({ accessToken, user: userDto });
     }
     
 }
