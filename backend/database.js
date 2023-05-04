@@ -16,21 +16,3 @@ function DbConnect() {
 }
 
 module.exports = DbConnect;
-
-// const mongoose = require('mongoose');
-// mongoose.set('strictQuery', true);
-// const DB_URL = process.env.DB_URL;
-
-// function DbConnect() {
-//     mongoose.connect(DB_URL, {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//         // useFindAndModify: false,
-//       }).then(() => {
-//         console.log('Database connected successfully!');
-//       }).catch((error) => {
-//         console.log('Error connecting to database: ', error);
-//       });
-// }
-
-// module.exports = DbConnect;
