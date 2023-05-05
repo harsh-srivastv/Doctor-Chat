@@ -7,14 +7,20 @@ import Navigation from './components/shared/Navigation/Navigation';
 import Authenticate from './pages/Authenticate/Authenticate';
 import Activate from './pages/Activate/Activate';
 import Rooms from './pages/Rooms/Rooms';
+// import Room from './pages/Room/Room';
 import { useSelector } from 'react-redux';
-// const isAuth = false;
-// const user = {
-//     activated: true,
-// };
+import { useLoadingWithRefresh } from './hooks/useLoadingWithRefresh';
+import Loader from './components/shared/Loader/Loader';
+
 
 function App() {
-    return (
+    // call refresh endpoint
+    const { loading } = useLoadingWithRefresh();
+
+    return loading ? (
+        <Loader message="Loading, please wait.." />
+        // "Loading, please wait.." 
+    ) : (
         <BrowserRouter>
             <Navigation />
             <Switch>
@@ -30,12 +36,9 @@ function App() {
                 <ProtectedRoute path="/rooms">
                     <Rooms />
                 </ProtectedRoute>
-                {/* <Route path="/register">
-                    <Register />
-                </Route>
-                <Route path="/login">
-                    <Login />
-                </Route> */}
+                <ProtectedRoute path="/room/:id">
+                    <Rooms />
+                </ProtectedRoute>
             </Switch>
         </BrowserRouter>
     );

@@ -1,5 +1,5 @@
 // This component imports the necessary dependencies and components, including React, useState, Card, Button, useSelector, and useDispatch.
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../../../components/shared/Card/Card';
 import Button from '../../../components/shared/Button/Button';
 import styles from './StepAvatar.module.css';
@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setAvatar } from '../../../store/activateSlice';
 import { activate } from '../../../http';
 import { setAuth } from '../../../store/authSlice';
+import Loader from '../../../components/shared/Loader/Loader';
 
 // This functional component renders a form that allows users to upload an avatar image and submit it for activation.
 const StepAvatar = ({ onNext }) => {
@@ -16,6 +17,8 @@ const StepAvatar = ({ onNext }) => {
 
     // This state hook defines the default avatar image that will be displayed if the user has not uploaded an image.
     const [image, setImage] = useState('/images/monkey-avatar.png');
+    const [loading, setLoading] = useState(false);
+    const [unMounted, setUnMounted] = useState(false);
 
     // This function handles the user's selection of an image file and sets the image state and Redux store with the selected file.
     function captureImage(e) {
@@ -30,21 +33,33 @@ const StepAvatar = ({ onNext }) => {
 
     // This asynchronous function sends the user's name and avatar data to the server for activation.
     async function submit() {
+        if (!name || !avatar) return;
+        setLoading(true);
         try {
             const { data } = await activate({ name, avatar });
             if (data.auth) {
-                dispatch(setAuth(data));
+                if (!unMounted) {
+                    dispatch(setAuth(data));
+                }
             }
-            console.log(data);
         } catch (err) {
             console.log(err);
+        } finally {
+            setLoading(false);
         }
     }
 
+    useEffect(() => {
+        return () => {
+            setUnMounted(true);
+        };
+    }, []);
+
     // This component returns a card that displays the user's name and allows the user to select an avatar image to upload and activate.
+    if (loading) return <Loader message="Activation in progress..." />;
     return (
         <>
-            <Card title={`Okay, ${name}`} icon="monkey-emoji">
+            <Card title={`Hye, ${name}`} icon="monkey-emoji">
                 <p className={styles.subHeading}>How’s this photo?</p>
                 <div className={styles.avatarWrapper}>
                     <img

@@ -1,17 +1,3 @@
-// import React from 'react';
-
-// const StepOtp = ({ onNext }) => {
-//     return (
-//         <>
-//             <div>Otp component</div>
-//             <button onClick={onNext}>Next</button>
-//         </>
-//     );
-// };
-
-// export default StepOtp;
-
-
 import React, { useState } from 'react';
 import Card from '../../../components/shared/Card/Card';
 import TextInput from '../../../components/shared/TextInput/TextInput';
@@ -28,6 +14,7 @@ const StepOtp = () => {
     const { phone, hash } = useSelector((state) => state.auth.otp);
     
     async function submit() {
+        if(!otp || !phone || !hash) return;
         try {
             const { data } = await verifyOtp({ otp, phone, hash });
             dispatch(setAuth(data));
