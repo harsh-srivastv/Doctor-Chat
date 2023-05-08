@@ -45,7 +45,7 @@ const Navigation = () => {
                             src={
                                 user.avatar
                                     ? user.avatar
-                                    : '/images/monkey-avatar.png'
+                                    : '/images/user-avatar.png'
                             }
                             width="40"
                             height="40"
@@ -56,7 +56,7 @@ const Navigation = () => {
                         className={styles.logoutButton}
                         onClick={logoutUser}
                     >
-                        <img src="/images/logout.png" alt="logout" />
+                        <img className='logoutButtonImage' src="/images/logout2.png" alt="logout" />
                     </button>
                 </div>
             )}

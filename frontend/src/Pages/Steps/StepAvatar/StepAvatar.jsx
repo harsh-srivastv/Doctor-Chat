@@ -16,7 +16,7 @@ const StepAvatar = ({ onNext }) => {
     const { name, avatar } = useSelector((state) => state.activate);
 
     // This state hook defines the default avatar image that will be displayed if the user has not uploaded an image.
-    const [image, setImage] = useState('/images/monkey-avatar.png');
+    const [image, setImage] = useState('/images/user-avatar.png');
     const [loading, setLoading] = useState(false);
     const [unMounted, setUnMounted] = useState(false);
 
@@ -59,7 +59,7 @@ const StepAvatar = ({ onNext }) => {
     if (loading) return <Loader message="Activation in progress..." />;
     return (
         <>
-            <Card title={`Hye, ${name}`} icon="monkey-emoji">
+            <Card title={`Hye, ${name}`} icon="Hand">
                 <p className={styles.subHeading}>How’s this photo?</p>
                 <div className={styles.avatarWrapper}>
                     <img
