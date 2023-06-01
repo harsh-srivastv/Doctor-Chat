@@ -1,79 +1,159 @@
-# Doctor Chat
-+ Doctor Chat is a medical chat application that works in real time using webRTC that forms a peer to peer connection between the Doctor and Patient.
+## **Doctor Chat - A Health Consultancy Platform**
 
-+ A patient can communicate with doctor through text, voice or video call.
+## **Project Overview**
+Doctor Chat is a medical chat application that works in real time using webRTC that forms a peer to peer connection between the Doctor and Patient. It provides users with a very smooth and attractive UI, where patients can schedule their appointment with the doctor and later join rooms created by doctors.
 
-+ It provides users with a very smooth and attractive UI, where patients can schedule their appointment with the doctor and later join rooms created by doctors. 
+## **Getting Started**
+To get the project up and running on your local system, follow these steps:
 
-## Features:
-+ Search for medical information: Patients can ask Doctor Chat questions about their symptoms, medications, or other medical topics and receive reliable information from reputable sources.
+### **Prerequisites**
 
-+ Connect with a medical professional: Patients can request to speak with a medical professional through the chatbot, who can provide personalized advice and assistance.
+- Node.js: Ensure that Node.js is installed on your machine. You can download it from the official website: [Node.js](https://nodejs.org/en)
 
-+ Appointments and prescriptions: Patients can schedule appointments or request prescriptions through the chatbot, making it easier to access healthcare services.
+- Git: Ensure that Node.js is installed on your machine. You can download it from the official website: [Git](https://git-scm.com/downloads)
 
-## Tools & Technologies Used:
+- MongoDB:Ensure that Node.js is installed on your machine. You can download it from the official website: [MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)
 
-- **Frontend**: ReactJS, HTML5, CSS 3
+### **Setting up Node**
+**Step 1: Download the Installer**
+Download the [Windows Installer](https://nodejs.org/en/download/) from Node.js official website. Make sure you have downloaded the latest version of Node.js. It includes the NPM package manager.
 
-- **Backend**: ExpressJS, NodeJS
+Here, we are choosing the 64-bit version of the Node.js installer.
+After choosing the path, double-click to install .msi binary files to initiate the installation process. Then give access to run the application.
 
-- **Database**: MongoDB
+**Step 2: Install Node.js and NPM**
+You will get a welcome message on your screen and click the "Next" button. The installation process will start.
 
-## Methodology/ Planning of work:
+- Choose the desired path where you want to install Node.js.
+- By clicking on the Next button, you will get a custom page setup on the screen. Make sure you choose **npm package manager**, not the default of Node.js runtime. This way, we can install Node.js and NPM simultaneously.
 
-### Registration:
-- Registration should be done using the OTP system either by mobile phone or by the email address.
+You should have **143MB** of space to install Node.js and npm features.
 
-- Following information must be provided while registering:
+The following features will be installed by default:
 
-  - Full Name 
-  
-  - Profile Picture
-  
-  - Create Username
-  
-### Rooms:
-+ Doctors can create rooms.
+- Node.js runtime
+- Npm package manager
+- Online documentation shortcuts
+- Add to Path
+- The setup is ready to install Node and NPM. Click on the Install button 
 
-+ User can filter doctors using search box.
+**Step 3: Check Node.js and NPM Version**
+- If you have a doubt whether you have installed everything correctly or not, let’s verify it with “Command Prompt”.
 
-+ Authenticate users can see list of public rooms.
+Command Prompt window will appear on the screen.
 
-+ Creator of the room can decide the type of the room that he/she wants to create:
+To confirm Node installation, type node -v command.
 
-  + Private
-  
-  + Public
-  
-+ Room will have two type of users:
+To confirm NPM installation, type npm -v command.
 
-  + Doctor
-  
-  + Patients
-  
-### Login:
-- Users can log in using OTP.
+And you don’t need to worry if you see different numbers than mine as Node and NPM are updated frequently.
 
-- OTP will be sent on phone number or email address.
+### **Setting up Git**
 
-### Logout:
-- User can logout using the logout button.
+#### **Using Git**
+
+To use Git on the command line, you will need to download, install, and configure Git on your computer. You can also install GitHub CLI to use GitHub from the command line. For more information, see ["About GitHub CLI"](https://cli.github.com/).
+
+If you want to work with Git locally but do not want to use the command line, you can download and install the GitHub Desktop client. For more information, see ["Installing and configuring GitHub Desktop"](https://desktop.github.com/).
+
+If you do not need to work with files locally, GitHub lets you complete many Git-related actions directly in the browser, including:
+
+- Creating a repository
+- Forking a repository
+- Managing files
+- Being social
+
+#### **Setting up Git**
+1. Download and install the latest version of Git from the [official Git website](https://git-scm.com/downloads).
+
+2. Set your username in Git by running the following command in your terminal or command prompt:
+```bash
+git config --global user.name "Your Username"
+```
+3. Set your commit email address in Git by running the following command in your terminal or command prompt:
+```bash
+git config --global user.email "your@email.com"
+```
+#### **Authenticating with GitHub from Git**
+When you connect to a GitHub repository from Git, you will need to authenticate with GitHub using either HTTPS or SSH.
+
+**Connecting over HTTPS (recommended)**
+If you clone with HTTPS, you can cache your GitHub credentials in Git using a credential helper. For more information, see ["About remote repositories"](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories) and ["Caching your GitHub credentials in Git"](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git).
+
+**Connecting over SSH**
+If you clone with SSH, you must generate SSH keys on each computer you use to push or pull from GitHub. For more information, see ["About remote repositories"](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories) and ["Generating a new SSH key and adding it to the ssh-agent"](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 
-## DFD for User Registration:
+### **Installation**
+No specific project directory is required.
 
-<p align="center">
-    <img height="400" width="600" src="https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Login%20DFD.png" alt="Login DFD">
-</p>
+1. Open Command Prompt and clone the repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/harsh-srivastv/Doctor-Chat
+```
+2. Navigate to the project directory:
+```bash
+cd project-directory
+```
+3. Install the dependencies for the frontend and backend:
+
+- Frontend
+```bash
+cd frontend
+npm install
+```
+   - Backend
+```bash
+cd backend
+npm install
+```
+4. Set up the environment variables:
+
+- Create a `.env` file in the backend directory.
+- Copy the contents of the `.env.example` file and replace the values with your specific configuration.
+- Create an account at [https://www.twilio.com/en-us]
+- Set your SID, Token, and Phone Number in .env file of backend folder
+
+5. Set up the database:
+ - Make sure you have MongoDB installed and running on your local machine.
+ - Update the MongoDB connection URL in the backend configuration file (`config.js` or `config.js`).
+
+
+6. Start the frontend and backend servers:
+
+-   Frontend:
+
+```bash
+cd frontend
+npm start
+```
+- Backend:
+
+```bash
+cd backend
+node server.js
+```
+Open your web browser and visit http://localhost:3000 to access the application.
  
+## **Technologies Used**
+**Frontend**: React.js, HTML, CSS, JavaScript, Redux
 
-## DFD for Doctor Chat:
+**Backend**: Node.js, Express.js, MongoDB, Mongoose
 
-<p align="center">
-    <img height="500" width="500" src="https://github.com/harsh-srivastv/Doctor-Chat/blob/main/Images/Doctor%20Chat%20DFD.PNG" alt="Doctor Chat DFD">
-</p>
+### **Created By**
 
-## Contribution:
+1. Harsh Srivastava - harshsrivastv12@gmail.com
+2. Aviral Tiwari - aviraltiwari49@gmail.com
+3. Divyam Kakkar - kakkardivyam24@gmail.com
+4. Anshika Gupta  - sonalgupta6394@gmail.com 
 
-- We welcome contributions to Doctor Chat. If you would like to report a bug or request a new feature, please open an issue on the repository. If you would like to submit a pull request, please follow the guidelines in the CONTRIBUTING file.
+**Under Supervision of**:
+- Ms. Akansha Singh (Assistant Professor), Computer Science and Engineering Department
+- Pranveer Singh Institute of Technology, AKTU
+
+## **Contact**
+For any inquiries or support, please contact our team at [Email](harshsrivastv12@gmail.com)
+
+Feel free to customize this README file based on your project's specific requirements and details.
+
